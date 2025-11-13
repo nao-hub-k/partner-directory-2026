@@ -13,7 +13,7 @@
     header {
       background-color: RED;
       color: #fff;
-      padding: 20px;
+      padding: 10px;
       text-align: center;
     }
     header h1 {
@@ -38,7 +38,7 @@
       background-color: #00418e;
       color: #fff;
       text-align: center;
-      padding: 20px;
+      padding: 10px;
       font-size: 12px;
     }
     .logoImg{
@@ -72,10 +72,19 @@
       margin: 0;
     }
     .table-scroll-container {
-      max-height: 380px; /* 表の高さを制限 */
-      overflow-y: auto;  /* 縦スクロールを有効にする */
-      border: 1px solid #ccc; /* 任意で枠線 */
+      max-height: 380px; 
+      overflow-y: auto; 
+      border: 1px solid #ccc;
     }
+    
+    /* スマホ用（画面幅768px以下） */
+    @media (max-width: 768px) {
+    .table-scroll-container {
+      max-height: 500px;
+    }
+    }
+
+    
   </style>
 </head>
 <body>
@@ -90,6 +99,7 @@
   <div class="table-scroll-container">
   <table id="csv-table"></table>
   </div>
+  <br>
   
   <script>
     fetch('companies.csv')
@@ -110,7 +120,6 @@
       });
   </script>
   
-
 <footer>
   <a href="https://www.instagram.com/yamato_spirit_fes/" class="smalllogoLink" target="_blank" rel="noopener">
     <img src="Instagram_Glyph_Black.png" alt="Instagramロゴ" class="smalllogoImg">
